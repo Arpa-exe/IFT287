@@ -1,0 +1,20 @@
+<!ELEMENT MainBody (Systems, Organs)>
+<!ATTLIST MainBody
+    bodyName CDATA #REQUIRED
+    bodyID ID #REQUIRED>
+<!ELEMENT Systems (System)+>
+<!ELEMENT System (Flow)+>
+<!ATTLIST System
+    name CDATA #REQUIRED
+    id ID #REQUIRED
+    type ID #REQUIRED>
+<!ELEMENT Flow (Connectible, Connections)>
+<!ATTLIST Flow
+    id ID #REQUIRED
+    name CDATA #REQUIRED>
+<!ELEMENT Connectible (Atrium | Ventricle | Vein | Capillaries | Nose | AirConnectible | Alveoli | DigestiveTract | StomachTract | 
+        DuodenumTract | RectumTract | BiDuct | Duct | DeversingDuct | InnerGallbladder | SalivaryDuct)*>
+<!ELEMENT Connections (Connection)*>
+<!ELEMENT Connection (to)+>
+<!ATTLIST Connection
+    id CDATA #REQUIRED>
